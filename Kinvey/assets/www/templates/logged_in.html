@@ -1,0 +1,51 @@
+<!-- 
+  Copyright (c) 2014 Kinvey Inc.
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+  in compliance with the License. You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software distributed under the License
+  is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+  or implied. See the License for the specific language governing permissions and limitations under
+  the License.
+ -->
+<div class="center-align-div" ng-controller="GetDetailsController">
+	<div id="loading" class="{{loader}}"></div>
+	<div id="main-login-div">     
+  		<div class="header">
+		   <table width="100%">
+		    <tr>
+		     <td align="right" class="glyphicon glyphicon-arrow-left back-btn" ng-click="goBack()" width="10%"></td>
+		     <td align="center"><b>{{userName}}</b></td>
+		     <td align="left" width="10%"><a ng-click="logout()" class="glyphicon glyphicon-log-out logout" style="color:#fff;text-decoration:none;"></a></td>
+		    </tr>
+		   </table>
+	   </div>
+		 <div class="block-div">	
+			<form name="projectForm" novalidate>
+			    <h4>New Project Details</h4>
+			    <div class="form-contents">
+				    <div class="form-group">
+						  <label for="projectName">Project Name</label>
+						  <select ng-model="projectName"  class="form-control" name="projectName" id="projectName" ng-options="opt as opt.name for opt in projects track by opt.id" required></select>
+						  <span class="loggedin" id="SubmittedName" ng-show="SubmittedName">Project Name is required.</span>
+				    </div>
+				    <div class="form-group">
+						  <label for="projectTime">Time ( in HRs )</label>
+						  <input id="projectTime" type="text"  class="form-control" ng-model="projectTime" name="projectTime" placeholder="6" required/>
+						  <span class="loggedin" id="submittedTime" ng-show="submittedTime">A Time is required.</span>
+				    </div>
+				    <div class="form-group">
+						  <label for="projectDescription">Desciption</label>
+						  <textarea id="projectDescription" type="text" class="form-control" ng-model="projectDescription" name="projectDescription" placeholder="What you did today ?" required></textarea>
+						  <span class="loggedin" id="submittedDesc" ng-show="submittedDesc">A Description is required.</span>
+				    </div>
+					    <button class="btn btn-success" id="save-detail" ng-click="SaveDetails()">
+							  <span class="glyphicon glyphicon-floppy-save"></span>Save Details
+					    </button>
+			    </div>
+			</form>
+		</div>
+	</div>
+</div>

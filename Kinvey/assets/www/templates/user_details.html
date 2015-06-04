@@ -1,0 +1,59 @@
+<!-- 
+  Copyright (c) 2014 Kinvey Inc.
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+  in compliance with the License. You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software distributed under the License
+  is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+  or implied. See the License for the specific language governing permissions and limitations under
+  the License.
+ -->
+<div class="center-align-div" ng-controller="GetDetailsController">
+	<div id="loading" class="{{loader}}"></div>
+	
+	<div id="main-login-div">     
+		  
+		<div class="header">
+			   <table width="100%">
+			    <tr>
+			     <td align="right" class="glyphicon glyphicon-arrow-left back-btn" ng-click="goBack()" width="10%"></td>
+			     <td align="center"><b>{{userName}}</b></td>
+			     <td align="left" width="10%"><a ng-click="logout()" class="glyphicon glyphicon-log-out logout" style="color:#fff;text-decoration:none;"></a></td>
+			    </tr>
+			   </table>
+		   </div>
+		   <div class="{{error}}" style="display:none;">{{message}}</div>
+		 <div class="block-div">    
+		    <div class="add-detail">
+			    <h4>Dashboard</h4>
+          <button class="btn btn-info" ng-click="redirectTo('logged_in')"><span class="glyphicon glyphicon-plus"></span>New Status</button>
+        </div>
+		    <div class="table-container">
+		        <table class="table table-striped basic">
+				<thead>
+					<tr>
+						<th class="project">Name</th>
+						<th class="time" align="center">Time</th>
+						<th class="approve" align="center">Approve</th>
+					</tr>
+				</thead>
+			 </table>
+			 <div>
+			 <table class="table table-striped basic"> 
+				<tbody ng-init="init()">
+					<tr  ng-repeat="x in getUserData">
+						<td class="project" ng-click="showDetails(x._id)">{{x.projectName}}</td>
+						<td class="time" ng-click="showDetails(x._id)">{{x.time}}</td>
+						<td class="approve" ng-click="showDetails(x._id)" ng-if="x.approve=='Yes'"><span class="glyphicon glyphicon-ok" style="color:green;"></span></td>
+						<td class="approve" ng-click="showDetails(x._id)" ng-if="x.approve=='No'"><span class="glyphicon glyphicon-remove" style="color:red;"></span></td>
+						<td class="approve" ng-click="showDetails(x._id)" ng-if="!x.approve"><span class="glyphicon glyphicon-question-sign"></span></td>
+					</tr>
+				</tbody>
+		     </table></div>
+		    </div>
+		</div>
+		<BR>
+	</div>
+</div>

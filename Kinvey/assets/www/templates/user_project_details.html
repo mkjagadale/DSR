@@ -1,0 +1,54 @@
+<!-- 
+  Copyright (c) 2014 Kinvey Inc.
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+  in compliance with the License. You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software distributed under the License
+  is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+  or implied. See the License for the specific language governing permissions and limitations under
+  the License.
+ -->
+<div class="center-align-div" ng-controller="ApproveDetailsController">
+	<div id="loading" class="{{loader}}"></div>
+	<div id="main-login-div">     
+  		<div class="header">
+		   <table width="100%">
+		    <tr>
+		     <td align="right" class="glyphicon glyphicon-arrow-left back-btn" ng-click="goBack()" width="10%"></td>
+		     <td align="center"><b>{{userName}}</b></td>
+		     <td align="left" width="10%"><a ng-click="logout()" class="glyphicon glyphicon-log-out logout" style="color:#fff;text-decoration:none;"></a></td>
+		    </tr>
+		   </table>
+	   </div>
+		 <div class="project-details">
+			    <h4>Project Details</h4>
+			    <table class="table table-striped">
+			    	<tbody>
+			    		<tr>
+					<td><label class="col-sm2 control-label" for="projectName">Project Name:</label></td>
+				  <td>{{getProjectData[0].projectName}}</td>
+			    </tr>
+			    <tr ng-if="username!=getProjectData[0].userName">
+				  <td><label class="col-sm2 control-label" for="projectTime">User:</label></td>
+				  <td>{{getProjectData[0].userName}}</td>
+			    </tr>
+			    <tr>
+				  <td><label class="col-sm2 control-label" for="projectTime">Time:</td>
+				  <td>{{getProjectData[0].time}}</td>
+			    </tr>
+			    <tr class="form-group">
+				  <td><label class="col-sm2 control-label" for="projectDescription">Approve Status:</td>
+				  <td ng-if="!getProjectData.approve">Pending</td>
+				  <td ng-if="getProjectData.approve">{{getProjectData[0].approve}}</td>
+			    </tr>
+			    <tr>
+				  <td><label class="col-sm2 control-label" for="projectDescription">Desciption:</label></td>
+				  <td>{{getProjectData[0].desc}}</td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,66 @@
+<!-- 
+  Copyright (c) 2014 Kinvey Inc.
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+  in compliance with the License. You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software distributed under the License
+  is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+  or implied. See the License for the specific language governing permissions and limitations under
+  the License.
+ -->
+<div class="center-align-div" ng-controller="GetDetailsController">
+	<div id="loading" class="{{loader}}"></div>
+	<div id="main-login-div">     
+			<div class="header">
+		   <table width="100%">
+		    <tr>
+		     <td align="right" class="glyphicon glyphicon-arrow-left back-btn" ng-click="goBack()" width="10%"></td>
+		     <td align="center"><b>{{userName}}</b></td>
+		     <td align="left" width="10%"><a ng-click="logout()" class="glyphicon glyphicon-log-out logout" style="color:#fff;text-decoration:none;"></a></td>
+		    </tr>
+		   </table>
+	   </div>
+		 <div class="block-div">
+			 <div class="add-detail">
+				<h4>Dashboard</h4>
+				 <button class="btn btn-info" ng-click="redirectTo('approve_details')">Approved Details</button>
+			</div>
+		    <div class="table-container">
+			  <table class="table table-striped basic">
+				<thead>
+					<tr>
+						<th class="uname">User Name</th>
+						<th class="pname" align="center">Project Name</th>
+						<th class="action" align="center">Approve</th>
+					</tr>
+				</thead>
+			 </table>
+			 <div>
+				 <table class="table table-striped basic">
+					<tbody ng-init="init()">
+						<tr ng-if="!getManagerData.length">
+							<td colspan=3 align="center">No data to Approve</td>
+						</tr>
+						<tr ng-if="getManagerData.length" ng-repeat="(key, values) in getManagerData | groupBy : 'userName'">
+							<td class="uname"><a ng-href="#/templates/user_details/{{values[0].userid}}">{{key}}</a></td>
+							<td>
+								<table class="table table-striped basic">
+									<tr ng-repeat="x in values">
+										<td class="pname" style="border-top:0px;">{{x.projectName}}</td>
+										<td class="action" style="border-top:0px;" align="center">
+											<span class="glyphicon glyphicon-ok" ng-click=saveStatus("Yes",x._id) style="color:green;"></span>
+											<span class="glyphicon glyphicon-remove" ng-click=saveStatus("No",x._id) style="color:red;"></span>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+			       </table>
+			 </div>
+		    </div>
+		</div>
+	</div>
+</div>

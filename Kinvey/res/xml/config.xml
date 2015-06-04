@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        id        = "io.cordova.helloCordova"
+        version   = "2.0.0">
+    <name>Hello Cordova</name>
+
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+
+    <author href="http://cordova.io" email="dev@cordova.apache.org">
+        Apache Cordova Team
+    </author>
+
+    <access origin="*"/>
+
+    <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
+    <content src="index.html" />
+
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="false" />
+    <preference name="WebViewBounce" value="false" />
+  	<preference name="SplashScreen" value="start"/>
+	<preference name="splashScreenDelay" value="1000" />
+	<preference name="android-windowSoftInputMode" value="stateVisible" />
+   
+    
+
+    <feature name="App">
+      <param name="android-package" value="org.apache.cordova.App"/>
+    </feature>
+    <feature name="Geolocation">
+      <param name="android-package" value="org.apache.cordova.GeoBroker"/>
+    </feature>
+    <feature name="Device">
+      <param name="android-package" value="org.apache.cordova.Device"/>
+    </feature>
+    <feature name="Accelerometer">
+      <param name="android-package" value="org.apache.cordova.AccelListener"/>
+    </feature>
+    <feature name="Compass">
+      <param name="android-package" value="org.apache.cordova.CompassListener"/>
+    </feature>
+    <feature name="Media">
+      <param name="android-package" value="org.apache.cordova.AudioHandler"/>
+    </feature>
+    <feature name="Camera">
+      <param name="android-package" value="org.apache.cordova.CameraLauncher"/>
+    </feature>
+    <feature name="Contacts">
+      <param name="android-package" value="org.apache.cordova.ContactManager"/>
+    </feature>
+    <feature name="File">
+      <param name="android-package" value="org.apache.cordova.FileUtils"/>
+    </feature>
+    <feature name="NetworkStatus">
+      <param name="android-package" value="org.apache.cordova.NetworkManager"/>
+    </feature>
+    <feature name="Notification">
+      <param name="android-package" value="org.apache.cordova.Notification"/>
+    </feature>
+    <feature name="Storage">
+      <param name="android-package" value="org.apache.cordova.Storage"/>
+    </feature>
+    <feature name="FileTransfer">
+      <param name="android-package" value="org.apache.cordova.FileTransfer"/>
+    </feature>
+    <feature name="Capture">
+      <param name="android-package" value="org.apache.cordova.Capture"/>
+    </feature>
+    <feature name="Battery">
+      <param name="android-package" value="org.apache.cordova.BatteryListener"/>
+    </feature>
+    <feature name="SplashScreen">
+      <param name="android-package" value="org.apache.cordova.SplashScreen"/>
+    </feature>
+    <feature name="Echo">
+      <param name="android-package" value="org.apache.cordova.Echo"/>
+    </feature>
+    <feature name="Globalization">
+      <param name="android-package" value="org.apache.cordova.Globalization"/>
+    </feature>
+    <feature name="InAppBrowser">
+      <param name="android-package" value="org.apache.cordova.InAppBrowser"/>
+    </feature>
+    
+     <feature name="SmsPlugin">
+      <param name="android-package" value="org.apache.cordova.plugin.SmsPlugin"/>
+    </feature>
+    
+    <feature name="WiFiPlugin">
+      <param name="android-package" value="org.apache.cordova.plugin.WiFiPlugin"/>
+    </feature>    
+    <feature name="GetTmlDataPlugin">
+      <param name="android-package" value="org.apache.cordova.plugin.GetTmlDataPlugin"/>
+    </feature>
+     <feature name="BluetoothPlugin">
+      <param name="android-package" value="org.apache.cordova.plugin.BluetoothPlugin"/>
+    </feature>
+    <feature name="CanPlugin">
+      <param name="android-package" value="org.apache.cordova.plugin.CanPlugin"/>
+    </feature>
+    
+    
+    <!-- Deprecated plugins element. Remove in 3.0 -->
+    <plugins>
+    <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"  AutoHideSplashScreen="false" />
+	<plugin name="BluetoothPlugin" value="org.apache.cordova.plugin.BluetoothPlugin"/>
+	<plugin name="App" value="org.apache.cordova.App"/>
+    <plugin name="Geolocation" value="org.apache.cordova.GeoBroker"/>
+    <plugin name="Device" value="org.apache.cordova.Device"/>
+    <plugin name="Accelerometer" value="org.apache.cordova.AccelListener"/>
+    <plugin name="Compass" value="org.apache.cordova.CompassListener"/>
+    <plugin name="Media" value="org.apache.cordova.AudioHandler"/>
+    <plugin name="Camera" value="org.apache.cordova.CameraLauncher"/>
+    <plugin name="Contacts" value="org.apache.cordova.ContactManager"/>
+    <plugin name="File" value="org.apache.cordova.FileUtils"/>
+    <plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager"/>
+    <plugin name="Notification" value="org.apache.cordova.Notification"/>
+    <plugin name="Storage" value="org.apache.cordova.Storage"/>
+    <plugin name="Temperature" value="org.apache.cordova.TempListener"/>
+    <plugin name="FileTransfer" value="org.apache.cordova.FileTransfer"/>
+    <plugin name="Capture" value="org.apache.cordova.Capture"/>
+    <plugin name="Battery" value="org.apache.cordova.BatteryListener"/>
+    <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
+    <plugin name="BluetoothPlugin" value="org.apache.cordova.plugin.BluetoothPlugin"/>
+    </plugins>
+    
+    <access origin="https://baas.kinvey.com*" />
+	<access origin="https://da189i1jfloii.cloudfront.net*" />
+	<access origin="https://storage.googleapis.com*" />
+</widget>

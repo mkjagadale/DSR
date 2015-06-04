@@ -1,0 +1,201 @@
+body {
+  font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+  height: 114px !important;
+}
+
+.contents {
+  margin: 20px;
+}
+
+.show-loading-screen{
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+    overflow: hidden;
+    position: absolute;
+    background-size: 20%;
+    background: url('../images/loading.gif') no-repeat center #000;
+}
+.hidedata
+{
+  display:none !important;
+}
+
+.err-message {
+  font-size: 13px;
+  color: red;
+}
+
+.logo {
+  text-align: center;
+  margin: 20px 20px 50px 20px;
+}
+
+.logo > img {
+  height: 10%;
+  width: 73%;
+}
+
+.table-container > div {
+  overflow: auto;
+  max-height: 69%;
+}
+
+.table:first-child {
+  margin-bottom: 0;
+}
+
+.basic {
+  table-layout: fixed;
+}
+
+th.project, td.project {
+  width: 50%;
+}
+
+th.time, td.time {
+  width: 17%;
+  text-align:center;
+}
+
+th.approve, td.approve {
+  width: 25%;
+  text-align:center;
+}
+
+th.uname, td.uname {
+	width:38%;
+}
+
+th.uname {
+  text-align: center;
+}
+
+td.uname {
+   word-wrap: break-word;
+}
+
+th.pname, td.pname {
+	width:40%;
+}
+
+th.action {
+   width:25%;
+   text-align: center;
+}
+td.action {
+	width:18%;
+	text-align: center;
+}
+
+td.approve, td.time {
+  text-align: center;
+}
+
+.add-detail > h4 {
+  float: left;
+}
+
+.add-detail > button {
+  float: right;
+}
+
+.add-detail > button > span {
+  margin-right: 5px;
+}
+
+.header td {
+ color: #fff;
+ font-weight: 800;
+}
+
+.block-div {
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.header {
+  height: 42px;
+  background-color: #d44b2b;
+  line-height: 42px;
+}
+
+.header > table {
+  background-color: #d44b2b;
+  height: 42px;
+}
+
+.back-btn, .logout {
+  font-size: 18px;
+}
+
+#save-detail > span {
+  margin-right: 5px;
+}
+
+.project-details {
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.project-details table {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.project-details tr {
+  backgroun-color: #DDDDDD;
+}
+.project-details tr td:first-child {
+  width: 45%;
+  text-align: right;
+}
+
+.main-div {
+  margin: 10px;
+}
+
+.btn-approve{
+	margin:0 auto;
+}
+.form-contents {
+	margin:5px;
+}
+
+/* Error Messages */
+.info, .success, .warning, .error, .validation {
+border: 1px solid;
+margin: 10px 0px;
+padding:10px 6px 10px 50px;
+background-repeat: no-repeat;
+background-position: 10px center;
+}
+.info {
+	color: #00529B;
+	background-color: #BDE5F8;	
+	margin:5px;
+}
+.success {
+	color: #4F8A10;
+	background-color: #DFF2BF;	
+	margin:5px;
+}
+.warning {
+	color: #9F6000;
+	background-color: #FEEFB3;
+	margin:5px;
+}
+.error {
+	color: #D8000C;
+	background-color: #FFBABA;
+	margin:5px;
+}

@@ -1,0 +1,53 @@
+<!-- 
+  Copyright (c) 2014 Kinvey Inc.
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+  in compliance with the License. You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software distributed under the License
+  is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+  or implied. See the License for the specific language governing permissions and limitations under
+  the License.
+ -->
+<div class="center-align-div" ng-controller="ApproveDetailsController">
+	<div id="loading" class="{{loader}}"></div>
+	<div id="main-login-div">     
+  		<div class="header">
+		   <table width="100%">
+		    <tr>
+		     <td align="right" class="glyphicon glyphicon-arrow-left back-btn" ng-click="goBack()" width="10%"></td>
+		     <td align="center"><b>{{userName}}</b></td>
+		     <td align="left" width="10%"><a ng-click="logout()" class="glyphicon glyphicon-log-out logout" style="color:#fff;text-decoration:none;"></a></td>
+		    </tr>
+		   </table>
+	   </div>
+		 <div class="block-div">    
+		    <div class="add-detail">		
+				<h4> Approved Details</h4>
+			</div>	
+		    <div class="table-container">
+		        <table  class="table table-striped basic" width="98%">
+				<thead>
+					<tr>
+						<th class="pname">Project Name</th>
+						<th class="uname">User Name</th>
+						<th class="action">Status</th>
+					</tr>
+				</thead>
+			 </table>
+			 <div>
+			 <table  class="table table-striped basic" width="98%"> 
+				<tbody ng-init="init()">
+					<tr ng-repeat="x in getApprovedManagerData">
+						<td class="pname" ng-click="showDetails(x._id)">{{x.projectName}}</td>
+						<td class="uname">{{x.userName}}</td>
+						<td class="action" align="center" ng-click="showDetails(x._id)" ng-if="x.approve=='Yes'"><span class="glyphicon glyphicon-ok" ng-click=saveStatus("Yes",x._id) style="color:green;"></span></td>
+						<td class="action" align="center" ng-click="showDetails(x._id)" ng-if="x.approve=='No'"><span class="glyphicon glyphicon-remove" ng-click=saveStatus("No",x._id) style="color:red;"></span></td>
+					</tr>
+				</tbody>
+		     </table></div>
+		    </div>
+		</div>
+	</div>
+</div>
